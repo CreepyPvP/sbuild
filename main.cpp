@@ -145,11 +145,12 @@ i32 main()
         if (IsLetter(Current)) 
         {
             string Ident = ReadIdent(&Buffer, &Arena);
-            for (u32 I = 0; I < Ident.Size; ++I) {
-                printf("%c", Ident.Base[I]);
-            }
-            printf("%u", Ident.Size);
-            break;
+            ExpectChar(&Buffer, ':');
+            ReadCommand(&Buffer, &Arena);
+        }
+        else
+        {
+            Buffer->Offset++;
         }
     }
 
