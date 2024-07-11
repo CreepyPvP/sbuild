@@ -1,0 +1,1 @@
+client: cl test.c 2>NUL
